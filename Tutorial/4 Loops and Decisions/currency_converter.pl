@@ -25,6 +25,16 @@ print "Enter amount ";
 $value = <STDIN>;
 
 chomp($from, $to, $value);
+
+if (not exists $rates{$to}){
+    die "I don't know anything about $to as a currency\n";
+}
+if (not exists $rates{$from}){
+    die "I don't know anything about $from as a currency\n";
+}
+
+
+
 $rate = $rates{$to} / $rates{$from};
 
 print "$value $from is ", $value*$rate, " $to.\n";
