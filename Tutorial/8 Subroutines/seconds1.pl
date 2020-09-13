@@ -12,6 +12,13 @@ sub secs2hms {
     return ($h, $m, $seconds);
 }
 
-my ($hours, $minutes, $seconds) = secs2hms(3732);
-print "3723 seconds is $hours hours, $minutes minutes and $seconds seconds";
+sub askUser {
+    print "Type in seconds \n";
+    my $input = <STDIN>;
+    chomp $input;
+    return $input;
+}
+my $input = askUser(3732);
+my ($hours, $minutes, $seconds) = secs2hms($input); 
+print "$input seconds is $hours hours, $minutes minutes and $seconds seconds";
 print "\n";

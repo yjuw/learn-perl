@@ -16,7 +16,3 @@ sub slurp {
 #     my $file = <>;
 #     return $file;
 # }
-
-
-#runtime scope = variable has temporary value for the current block because it's global
-#lexical scope = creates a variable that is only visible to the statements inside the block
