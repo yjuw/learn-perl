@@ -1,0 +1,15 @@
+perl -ane 'print $F[0] "\n" chapter9.txt
+
+-a splits by spaces 
+-F lets you choose delimiter
+
+-a command does this 
+while (<>) {
+    my @array = split;
+}
+
+-an does
+LINE: while (defined($_ = <ARGV>)){
+    @F = split;
+    'Your code here';
+}

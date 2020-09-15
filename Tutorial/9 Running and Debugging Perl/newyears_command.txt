@@ -1,0 +1,1 @@
+perl -ne 's/1999/2000/g;print' newyear.txt>changedfile.txt

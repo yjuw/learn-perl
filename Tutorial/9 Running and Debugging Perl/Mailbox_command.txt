@@ -1,0 +1,6 @@
+perl -ne 'print if /^(Subject|From): /' Mailbox
+
+perl interprets this as 
+while (defined($_ = <ARGV>)){
+    print $_ if /^(Subject|From): /;
+}
