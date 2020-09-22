@@ -1,0 +1,38 @@
+On branch master
+Your branch is up to date with 'learn-perl/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   ../../.gitignore
+	new file:   available.pl
+	new file:   copydbm.pl
+	new file:   demo.dbm
+	new file:   demo.dbm.dir
+	new file:   demo.dbm.pag
+	new file:   hashdbm.pl
+	new file:   mlanydbdemo.dbm
+	new file:   mlanydbdemo.dbm.dir
+	new file:   mlanydbdemo.dbm.pag
+	new file:   mldbdemo.dbm.dir
+	new file:   mldbdemo.dbm.pag
+	new file:   mldbm1.pl
+	new file:   mldbm2.pl
+	new file:   mldbm3.pl
+	new file:   mldbm4.pl
+	new file:   opendb.pl
+	new file:   passlist.txt
+	new file:   simpledb.dbm.dir
+	new file:   simpledb.dbm.pag
+	new file:   simpledb.pl
+	new file:   start_mysql.sh
+	new file:   stop_mysql.sh
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   ../../.gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	git_list.txt
+
