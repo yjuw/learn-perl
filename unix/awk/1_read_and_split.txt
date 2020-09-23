@@ -1,0 +1,31 @@
+awk 'pattern{action}' file
+
+pattern is the condition that is executed if the pattern matches
+If the pattern is not present, the action will be executed for every line.
+If the action is missing, every line will be printed
+
+awk '{print $1}' file1
+will print the first word of every line (default seems to split by space)
+
+awk 'NR!=1{print $1}' file1
+NR denotes line number. NR!=1 means to not execute the action part for the first line of the file
+will print the first word but omit the header
+
+awk '{print $0}' file1
+prints entire file. $0 represents the entire line
+
+awk '1' file1
+will also print the entire file. 1 means true which means true for every line
+
+################################################################################
+what if the file is delimited? csv file1
+awk -F"," '{print $1}' file1.csv
+prints first column where each line is split by comma
+FS means Field Separator and is the same as -F
+
+awk '{print $1,$3}' FS="," file1.csv
+Print 1st and 3rd columns
+
+awk -F, '{print $2}' file1.csv
+print 2nd columns
+
