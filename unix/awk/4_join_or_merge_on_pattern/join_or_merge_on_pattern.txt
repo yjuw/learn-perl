@@ -1,0 +1,24 @@
+in the "file" file, join all the lines following the pattern START
+
+awk '/START/{if (NR!=1)print "";next}{printf $0}END{print "";}' file
+Glue together all the lines following start, and then print them on
+right on the next START statement.
+/START/ searches for only lines containing START.
+the first {} will only activate when START is found
+the second {} will activates only for lines not containing START
+END is used to print a newline
+
+awk '/START/{if (NR!=1)print "";next}{printf "%s ", $0}END{print "";}' file
+print with space in between the words
+
+awk '/START/{if (x)print x;x="";next}{x=(!x)?$0:x","$0;}END{print x;}' file
+print with comma delimeter
+The command {if (x)print x;x="";next}{x=(!x)?$0:x","$0;} means if x is empty, the assign 
+the whole line to x. Else append a comma and the current line to x.
+
+awk '/START/{if (x)print x;x="";}{x=(!x)?$0:x","$0;}END{print x;}' file
+same but prints the pattern that you are matching with (START). This is accomplished
+with the missing next. The second curly brace will apply for the START lines as well
+
+awk '/START/{if (x)print x;print;x="";next}{x=(!x)?$0:x","$0;}END{print x;}' file
+This will print START in a different line
