@@ -1,0 +1,37 @@
+awk '$0 ~ /Rent/{print}' file
+simulation of grep through awk. ~ means that a pattern will be used.Everything in between
+// is the pattern.
+default behavior of print - read whole line
+
+awk '/Rent/{print}' file
+will also print the whole line
+
+awk -F, '$1 ~ /Rent/' file
+-F option is used for delimeter
+
+awk -F, '$1=="Rent"' file
+to match exactly for the word "Rent"
+
+awk -F, '$1 == "Medicine"{print $2}' file
+prints only the 2nd column for Medicine records
+
+awk '/Rent|Medicine/' file
+match for patterns "Rent" or "Medicine"
+
+awk -F, '$1 ~ /^Rent$|^Medicine$/' file
+This will match only Rent or Medicine (regex ^ is beginning of the line, $ is the end)
+
+awk '!/Medicine/' file
+! is used to negate the pattern search. print everything except rows with Medicine
+
+awk -F, '$2>500' file
+print all records whose amount is greater than 500
+
+awk 'NR==1 && /Medicine/' file
+print Medicine record only if it is the first record
+
+awk -F, '/Medicine/ && $2>500' file
+print rows with Medicine and the amount is greater than 500
+
+awk -F, '/Medicine/ || $2>600' file
+print medicine records or print records greater than 600
