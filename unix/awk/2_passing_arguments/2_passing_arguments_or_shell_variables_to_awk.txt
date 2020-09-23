@@ -1,0 +1,20 @@
+#this section assumes that there is a variable x=3
+
+the -v option to pass arguments.
+
+awk -v val=$x '{print $0+val}' file1
+For each line in file1 add $x and then print it out
+
+awk '{print $0,val}' OFS=, val=$x file1
+without -v, can provide variable right before the file1
+
+#######################################################
+in order to access an environment variable in awk
+export x
+awk '{print $0,ENVIRON["x"]}' OFS=, file1
+will print the line in the file, a comma, and then $x
+
+awk -v q="'" '{print q $0 q}' file2
+will print the contents contained with quotes
+
+awk -v q='"' '{print q $0 q}' file2

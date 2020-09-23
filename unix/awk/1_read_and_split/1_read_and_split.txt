@@ -29,3 +29,5 @@ Print 1st and 3rd columns
 awk -F, '{print $2}' file1.csv
 print 2nd columns
 
+awk -F"," 'NR!=1{print $1,$3}' OFS="," file1.csv
+discards the header, prints 1st and 3rd columns
